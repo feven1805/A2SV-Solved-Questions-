@@ -5,10 +5,10 @@ class Solution(object):
         :rtype: int
         """
         sum = 0
-        for i in range(len(nums)+1):
-            sum += i
+        for i in nums:
+            sum+= i
         realSum = 0
-        for j in range(len(nums)):
-            realSum = realSum + nums[j]
-        missingNum = sum - realSum
-        return missingNum
+        for n in range(len(nums)+1):
+            realSum += n
+        missing = realSum - sum
+        return missing
