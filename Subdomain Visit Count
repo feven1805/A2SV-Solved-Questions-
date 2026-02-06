@@ -8,10 +8,8 @@ class Solution(object):
         for parts in cpdomains:
             count, domain = parts.split(" ")
             count = int(count)
-            """count == 9001
-                domain == leetcode.com """
             domain2 = domain.split(".")
-            """domain2 = [discuss, leetcode, com]"""
+
             for i in range(len(domain2)):
                 word = domain2[i:]
                 subDomain = ".".join(word)
