@@ -1,9 +1,9 @@
 class Solution(object):
     def longestConsecutive(self, nums):
-        if not nums:
+        if len(nums) == 0:
             return 0
 
-        nums2 = set(nums)      # remove duplicates
+        nums2 = set(nums)   
         nums3 = list(nums2)
         nums3.sort()
 
