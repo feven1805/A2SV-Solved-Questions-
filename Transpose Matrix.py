@@ -1,0 +1,17 @@
+class Solution(object):
+    def transpose(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        rows = len(matrix)
+        cols = len(matrix[0])
+        
+        ans = [[0] * rows for row in range(cols)]
+
+        for row in range(rows):
+            for col in range(cols):
+                ans[col][row] = matrix[row][col]
+        return ans
+            
+
