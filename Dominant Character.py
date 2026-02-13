@@ -4,26 +4,28 @@ t = int(input())
 for _ in range(t):
     n = int(input())
     s = input().strip()
-    
-    answer = -1
-    
-    for i in range(n - 1):
-        if s[i] == 'a' and s[i + 1] == 'a':
-            answer = 2
-            break
-    
-    if answer == -1:
-        for i in range(n - 2):
-            if s[i] == 'a' and s[i + 2] == 'a':
-                answer = 3
-                break
-    
+    ans = -1
+    found = False
+    for length in (2,3,4,7):
+        for i in range(n-length + 1):
+            sub = s[i: i+length]
+            a = sub.count('a')
+            b = sub.count('b')
+            c = sub.count('c')
 
-    if answer == -1:
-        for i in range(n - 3):
-            if s[i] == 'a' and s[i + 3] == 'a':
-                if s[i+1] != 'a' and s[i+2] != 'a':
-                    answer = 4
-                    break
-    
-    print(answer)
+            if a > b and a > c:
+                ans = length
+                found = True
+                break
+            else:
+                found = False
+        if found:
+            break
+    print(ans)
+
+
+
+
+
+
+
